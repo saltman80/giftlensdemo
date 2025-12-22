@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GiftLens AI Results - AI-powered gift recommendations based on your search query and preferences.">
+    <meta name="keywords" content="gift results, AI gift finder, personalized gifts, gift search">
+    <link rel="canonical" href="https://giftlensai.com/results">
+    <title>Gift Search Results - GiftLens AI</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="GiftLens AI Home">GiftLens AI</a>
+            
+            <div class="search-container">
+                <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="2"/>
+                    <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="search" class="search-input" placeholder="Search for gifts..." aria-label="Search for gifts">
+            </div>
+
+            <nav id="nav-main" class="nav-right" aria-label="Main navigation">
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu nav-links" id="main-menu" role="list">
+                    <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+                    <li><a class="nav-link" href="services.html">Services</a></li>
+                    <li><a class="nav-link" href="index.html#about">About</a></li>
+                    <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+                <a href="#" class="login-btn">Login</a>
+                <button class="wishlist-btn" aria-label="View wishlist">
+                    <svg class="wishlist-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+        
+        <div class="provider-bar">
+            Searching: Amazon ? Shop ? Etsy ? Walmart ? More
+        </div>
+        
+        <div class="affiliate-note">
+            All purchases may use affiliate links.
+        </div>
+    </header>
+
+    <main id="main" role="main">
+        <aside class="sidebar" aria-label="Filters">
+            <section class="filter-section">
+                <h2 class="filter-title">Price Range</h2>
+                <div class="price-range">
+                    <div class="price-slider">
+                        <div class="price-slider-track"></div>
+                        <input type="range" id="price-min" min="0" max="100" value="0" step="5" aria-label="Minimum price">
+                        <input type="range" id="price-max" min="0" max="100" value="100" step="5" aria-label="Maximum price">
+                    </div>
+                    <div class="price-labels">
+                        <span>$0</span>
+                        <span>$100+</span>
+                    </div>
+                    <div class="price-presets">
+                        <button class="price-preset" data-value="25">$25</button>
+                        <button class="price-preset active" data-value="50">$50</button>
+                        <button class="price-preset" data-value="100">$100</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <h2 class="filter-title">Site Selection</h2>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="amazon" checked>
+                        <label for="amazon">Amazon</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="etsy">
+                        <label for="etsy">Etsy</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="walmart">
+                        <label for="walmart">Walmart</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="more">
+                        <label for="more">More</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <h2 class="filter-title">Category</h2>
+                <div class="category-tags">
+                    <button class="category-tag active">Gadgets</button>
+                    <button class="category-tag active">Home</button>
+                    <button class="category-tag">Home</button>
+                    <button class="category-tag">Accessories</button>
+                    <button class="category-tag">Food and Drink</button>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <h2 class="filter-title">Rating minimum</h2>
+                <div class="star-rating">
+                    <button class="star active" data-rating="1" aria-label="1 star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </button>
+                    <button class="star active" data-rating="2" aria-label="2 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </button>
+                    <button class="star active" data-rating="3" aria-label="3 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </button>
+                    <button class="star" data-rating="4" aria-label="4 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </button>
+                    <button class="star" data-rating="5" aria-label="5 stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </button>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <h2 class="filter-title">Shipping Speed</h2>
+                <div class="checkbox-group shipping-options">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="prime" checked>
+                        <label for="prime">Prime</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="standard">
+                        <label for="standard">Standard</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="filter-section">
+                <h2 class="filter-title">Sort</h2>
+                <select class="sort-dropdown" id="sort-select" aria-label="Sort results">
+                    <option value="">Sort...</option>
+                    <option value="relevance">Relevance</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Customer Rating</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </section>
+        </aside>
+
+        <section class="results-grid" aria-label="Search results">
+            <article class="product-card" data-product-id="product-1">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Coffee Maker</h3>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(120)</span>
+                    </div>
+                    <span class="product-vendor product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Amazon
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-2">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Desk Organizer Set</h3>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(120)</span>
+                    </div>
+                    <span class="product-vendor etsy product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Etsy
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-3">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Caworkee Maker</h3>
+                    <p class="product-price">$15.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(93)</span>
+                    </div>
+                    <span class="product-vendor walmart product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Walmart
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-4">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Foucher</h3>
+                    <p class="product-price">$42.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(33)</span>
+                    </div>
+                    <span class="product-vendor product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Amazon
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-5">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Coffee Maker</h3>
+                    <p class="product-price">$19.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(97)</span>
+                    </div>
+                    <span class="product-vendor etsy product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Etsy
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-6">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Door Weaker</h3>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(39)</span>
+                    </div>
+                    <span class="product-vendor walmart product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Walmart
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-7">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Beelling</h3>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(120)</span>
+                    </div>
+                    <span class="product-vendor product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Amazon
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-8">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1510906594845-bc082582c8cc?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Coffee</h3>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(120)</span>
+                    </div>
+                    <span class="product-vendor walmart product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Walmart
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-9">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Tunker</h3>
+                    <p class="product-price">$15.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(36)</span>
+                    </div>
+                    <span class="product-vendor walmart product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Walmart
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-10">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1487700160041-babef9c3cb55?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Panner</h3>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(59)</span>
+                    </div>
+                    <span class="product-vendor product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Amazon
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-11">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Coffee</h3>
+                    <p class="product-price">$45.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(120)</span>
+                    </div>
+                    <span class="product-vendor product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Amazon
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-product-id="product-12">
+                <div class="product-image product-thumb" data-bg="https://images.unsplash.com/photo-1503602642458-232111445657?w=400&h=400&fit=crop">
+                    <svg viewBox="0 0 24 24" fill="#c4c4c4">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Panner</h3>
+                    <p class="product-price">$13.99</p>
+                    <div class="product-rating">
+                        <div class="rating-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="#e8e8ea"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-count">(120)</span>
+                    </div>
+                    <span class="product-vendor product-source">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Amazon
+                    </span>
+                    <div class="product-actions">
+                        <button class="wishlist-btn" aria-pressed="false" aria-label="Add to wishlist">Add to wishlist</button>
+                        <button class="action-btn">Compare</button>
+                    </div>
+                </div>
+            </article>
+
+            ?[TRUNCATED]
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
