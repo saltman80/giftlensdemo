@@ -1,0 +1,979 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GiftLens AI Analysis - AI-powered gift recommendation analysis based on recipient interests, budget, and preferences.">
+    <meta name="keywords" content="gift analysis, AI gift finder, personalized gifts, gift recommendations">
+    <link rel="canonical" href="https://giftlensai.com/analysis">
+    <title>AI Gift Analysis - GiftLens AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            color: #1a1f36;
+            line-height: 1.5;
+            font-size: 16px;
+            background: #f5f5f7;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1a1f36;
+            color: #ffffff;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e8e8ea;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1f36;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: #1a1f36;
+            opacity: 0.5;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 24px 12px 48px;
+            border: 1px solid #e8e8ea;
+            border-radius: 24px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: #f5a94b;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #1a1f36;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a:focus {
+            color: #f5a94b;
+        }
+
+        .nav-menu a.active {
+            color: #f5a94b;
+        }
+
+        .login-btn {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1f36;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .wishlist-btn {
+            width: 24px;
+            height: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wishlist-icon {
+            width: 24px;
+            height: 24px;
+            stroke: #1a1f36;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            width: 40px;
+            height: 40px;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1a1f36;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .secondary-nav {
+            background: #e8e8ea;
+            padding: 12px 24px;
+            text-align: center;
+            font-size: 13px;
+            color: #000000;
+        }
+
+        .affiliate-notice {
+            background: #ffffff;
+            padding: 8px 24px;
+            text-align: right;
+            font-size: 11px;
+            color: #1a1f36;
+            border-bottom: 1px solid #e8e8ea;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .upload-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .upload-preview {
+            background: #f5f5f7;
+            border-radius: 12px;
+            padding: 48px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+        }
+
+        .preview-image {
+            width: 180px;
+            height: 180px;
+            background: #c4c4c4;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-text {
+            font-size: 14px;
+            color: #1a1f36;
+            font-weight: 500;
+        }
+
+        .upload-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .upload-btn {
+            flex: 1;
+            padding: 12px 24px;
+            border: 2px solid #1a1f36;
+            border-radius: 24px;
+            background: #ffffff;
+            color: #1a1f36;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .upload-btn:hover,
+        .upload-btn:focus {
+            background: #1a1f36;
+            color: #ffffff;
+        }
+
+        .remove-btn {
+            flex: 1;
+            padding: 12px 24px;
+            border: 2px solid #dc3545;
+            border-radius: 24px;
+            background: #ffffff;
+            color: #dc3545;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .remove-btn:hover,
+        .remove-btn:focus {
+            background: #dc3545;
+            color: #ffffff;
+        }
+
+        .analysis-section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .query-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .query-text {
+            font-size: 16px;
+            color: #1a1f36;
+            line-height: 1.6;
+        }
+
+        .progress-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e8e8ea;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #1a1f36;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #1a1f36;
+            font-weight: 500;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #e8e8ea;
+            border-top-color: #1a1f36;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .filter-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .filter-section {
+            margin-bottom: 32px;
+        }
+
+        .filter-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1f36;
+            margin-bottom: 16px;
+        }
+
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            padding: 8px 20px;
+            border: 1px solid #e8e8ea;
+            border-radius: 24px;
+            background: #ffffff;
+            color: #1a1f36;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover,
+        .tag:focus {
+            border-color: #1a1f36;
+        }
+
+        .tag.active {
+            background: #1a1f36;
+            color: #ffffff;
+            border-color: #1a1f36;
+        }
+
+        .budget-section {
+            margin-bottom: 32px;
+        }
+
+        .budget-slider {
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .budget-slider input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: #e8e8ea;
+            border-radius: 4px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .budget-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #1a1f36;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .budget-slider input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #1a1f36;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .budget-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #1a1f36;
+            margin-bottom: 16px;
+        }
+
+        .budget-presets {
+            display: flex;
+            gap: 12px;
+        }
+
+        .budget-preset {
+            padding: 8px 20px;
+            border: 1px solid #e8e8ea;
+            border-radius: 24px;
+            background: #ffffff;
+            color: #1a1f36;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .budget-preset:hover,
+        .budget-preset:focus {
+            border-color: #1a1f36;
+        }
+
+        .budget-preset.active {
+            background: #1a1f36;
+            color: #ffffff;
+            border-color: #1a1f36;
+        }
+
+        .toggle-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .toggle-label {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1f36;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 56px;
+            height: 32px;
+            background: #e8e8ea;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 24px;
+            height: 24px;
+            background: #ffffff;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            transform: translateX(24px);
+        }
+
+        .toggle-switch.active {
+            background: #1a1f36;
+        }
+
+        .dropdown-section {
+            margin-bottom: 32px;
+        }
+
+        .dropdown-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e8e8ea;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1a1f36;
+            background: #ffffff;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%231a1f36' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .dropdown-select:focus {
+            border-color: #f5a94b;
+        }
+
+        footer {
+            background: #ffffff;
+            border-top: 1px solid #e8e8ea;
+            padding: 32px 24px;
+            margin-top: 64px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #1a1f36;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: #f5a94b;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            fill: #1a1f36;
+            transition: fill 0.2s;
+        }
+
+        .social-links a:hover .social-icon,
+        .social-links a:focus .social-icon {
+            fill: #f5a94b;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .search-container {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                flex-direction: column;
+                padding: 24px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                gap: 16px;
+                display: none;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            main {
+                padding: 24px 16px;
+                gap: 24px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="GiftLens AI Home">GiftLens AI</a>
+            
+            <div class="search-container">
+                <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="2"/>
+                    <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="search" class="search-input" placeholder="Search for gifts..." aria-label="Search for gifts">
+            </div>
+
+            <nav class="nav-right" aria-label="Main navigation">
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="main-menu" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <a href="#" class="login-btn">Login</a>
+                <button class="wishlist-btn" aria-label="View wishlist">
+                    <svg class="wishlist-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+        
+        <div class="secondary-nav">
+            Searching: <strong>Amazon</strong> ? <strong>Shop</strong> ? <strong>Etsy</strong> ? <strong>Walmart</strong> ? <strong>More</strong>
+        </div>
+        
+        <div class="affiliate-notice">
+            All purchases may use affiliate links.
+        </div>
+    </header>
+
+    <main id="main" role="main">
+        <section class="upload-section" aria-labelledby="upload-title">
+            <div class="upload-preview">
+                <div class="preview-image" id="preview-image">
+                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#c4c4c4" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="5"/>
+                        <path d="M20 21a8 8 0 0 0-16 0"/>
+                    </svg>
+                </div>
+                <span class="preview-text" id="preview-text">Uploaded image preview</span>
+            </div>
+            <div class="upload-actions">
+                <button class="upload-btn" id="replace-btn" aria-label="Replace image">Replace</button>
+                <button class="remove-btn" id="remove-btn" aria-label="Remove image">Remove</button>
+            </div>
+            <input type="file" id="file-input" accept="image/*" style="display: none;" aria-label="Upload image file">
+        </section>
+
+        <section class="analysis-section" aria-labelledby="analysis-title">
+            <div class="query-card">
+                <p class="query-text">Gift for a coworker who likes coffee, minimal design, and desk gadgets. Budget under $50.</p>
+            </div>
+
+            <div class="progress-card" id="progress-card">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 60%;"></div>
+                </div>
+                <div class="progress-text">
+                    <div class="spinner"></div>
+                    <span id="progress-text">AI Analyzing interests...</span>
+                </div>
+            </div>
+
+            <div class="filter-card">
+                <div class="filter-section">
+                    <h2 class="filter-title">AI Analysis</h2>
+                    <div class="tag-group">
+                        <span class="tag active">Coffee</span>
+                        <span class="tag active">Minimalist</span>
+                        <span class="tag active">Desk setup</span>
+                        <span class="tag active">Productivity</span>
+                        <span class="tag active">Tech accessories</span>
+                    </div>
+                </div>
+
+                <div class="budget-section">
+                    <h2 class="filter-title">Budget</h2>
+                    <div class="budget-slider">
+                        <input type="range" id="budget-range" min="0" max="100" value="50" step="5" aria-label="Budget range slider">
+                    </div>
+                    <div class="budget-labels">
+                        <span>$0</span>
+                        <span>$100+</span>
+                    </div>
+                    <div class="budget-presets">
+                        <button class="budget-preset" data-value="25">$25</button>
+                        <button class="budget-preset active" data-value="50">$50</button>
+                        <button class="budget-preset" data-value="100">$100</button>
+                    </div>
+                </div>
+
+                <div class="toggle-section">
+                    <span class="toggle-label">Prime eligible</span>
+                    <label class="toggle-switch active">
+                        <input type="checkbox" id="prime-toggle" checked aria-label="Prime eligible filter">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="filter-section">
+                    <h2 class="filter-title">Category</h2>
+                    <div class="tag-group">
+                        <span class="tag active">Home</span>
+                        <span class="tag">Tech</span>
+                        <span class="tag">Office</span>
+                        <span class="tag">house</span>
+                        <span class="tag">Hoat</span>
+                        <span class="tag">Tdte</span>
+                        <span class="tag">Prove-ntine</span>
+                    </div>
+                </div>
+
+                <div class="dropdown-section">
+                    <h2 class="filter-title">Occasion</h2>
+                    <select class="dropdown-select" id="occasion-select" aria-label="Select occasion">
+                        <option value="">Occasion...</option>
+                        <option value="birthday">Birthday</option>
+                        <option value="anniversary">Anniversary</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="graduation">Graduation</option>
+                        <option value="holiday">Holiday</option>
+                        <option value="thank-you">Thank You</option>
+                        <option value="housewarming">Housewarming</option>
+                        <option value="just-because">Just Because</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <ul class="footer-links" role="list">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+            </ul>
+            
+            <div class="social-links">
+                <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener">
+                    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener">
+                    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                    </svg>
+                </a>
+                <a href="https://youtube.com" aria-label="YouTube" target="_blank" rel="noopener">
+                    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">
+                    <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#ffffff"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#ffffff" stroke-width="2"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // File upload handling
+        const fileInput = document.getElementById('file-input');
+        const replaceBtn = document.getElementById('replace-btn');
+        const removeBtn = document.getElementById('remove-btn');
+        const previewImage = document.getElementById('preview-image');
+        const previewText = document.getElementById('preview-text');
+
+        if (replaceBtn && fileInput) {
+            replaceBtn.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        previewImage.innerHTML = `<img src="${e.target.result}" alt="Uploaded preview" style="width: 100%; height: 100%; object-fit: cover;">`;
+                        previewText.textContent = file.name;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        if (removeBtn) {
+            removeBtn.addEventListener('click', () => {
+                previewImage.innerHTML = `<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#c4c4c4" stroke-width="1.5">
+                    <circle cx="12" cy="8" r="5"/>
+                    <path d="M20 21a8 8 0 0 0-16 0"/>
+                </svg>`;
+                previewText.textContent = 'Uploaded image preview';
+                if (fileInput) fileInput.value = '';
+            });
+        }
+
+        // Progress simulation
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        let progress = 60;
+
+        setInterval(() => {
+            progress += 5;
+            if (progress > 100) progress = 60;
+            if (progressFill) progressFill.style.width = progress + '%';
+        }, 1000);
+
+        // Tag toggling
+        const tags = document.querySelectorAll('.tag');
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.classList.toggle('active');
+            });
+        });
+
+        // Budget slider
+        const budgetRange = document.getElementById('budget-range');
+        const budgetPresets = document.querySelectorAll('.budget-preset');
+
+        if (budgetRange) {
+            budgetRange.addEventListener('input', (e) => {
+                const value = e.target.value;
+                budgetPresets.forEach(preset => {
+                    preset.classList.remove('active');
+                    if (parseInt(preset.dataset.value) === parseInt(value)) {
+                        preset.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        budgetPresets.forEach(preset => {
+            preset.addEventListener('click', () => {
+                budgetPresets.forEach(p => p.classList.remove('active'));
+                preset.classList.add('active');
+                if (budgetRange) {
+                    budgetRange.value = preset.dataset.value;
+                }
+            });
+        });
+
+        // Prime toggle
+        const primeToggle = document.getElementById('prime-toggle');
+        const toggleSwitch = document.querySelector('.toggle-switch');
+
+        if (primeToggle && toggleSwitch) {
+            primeToggle.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    toggleSwitch.classList.add('active');
+                } else {
+                    toggleSwitch.classList.remove('active');
+                }
+            });
+        }
+
+        // Header search functionality
+        const headerSearchInput = document.querySelector('.search-input');
+        if (headerSearchInput) {
+            headerSearchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    const searchQuery = headerSearchInput.value.trim();
+                    if (searchQuery) {
+                        console.log('Header search:', searchQuery);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+```
