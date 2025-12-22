@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GiftLens AI - Your personalized wishlist and gift sharing platform">
+    <title>Wishlist and Share - GiftLens AI</title>
+    <link rel="canonical" href="https://giftlens.ai/wishlist">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <div class="header-container">
+            <a href="/" class="logo" aria-label="GiftLens AI Home">GiftLens AI</a>
+
+            <nav id="nav-main" class="nav-links" aria-label="Main navigation">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="analysis.html">Analysis</a>
+                <a class="nav-link" href="results.html">Results</a>
+                <a class="nav-link" href="wishlist.html" aria-current="page">Wishlist</a>
+            </nav>
+            
+            <div class="search-container">
+                <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input 
+                    type="search" 
+                    class="search-input" 
+                    placeholder="Search for gifts..."
+                    aria-label="Search for gifts"
+                >
+            </div>
+
+            <div class="header-actions">
+                <a href="/login" class="login-link">Login</a>
+                <svg class="wishlist-icon" aria-label="View wishlist" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="source-bar provider-bar" role="complementary" aria-label="Shopping sources">
+        Searching: Amazon ? Shop ? Etsy ? Walmart ? More
+    </div>
+
+    <div class="affiliate-notice affiliate-note">
+        All purchases may use affiliate links.
+    </div>
+
+    <main id="main-content" role="main">
+        <div class="content-grid">
+            <section aria-labelledby="wishlist-heading">
+                <h1 id="wishlist-heading">Wishlist and Share</h1>
+
+                <div class="wishlist-items wishlist-list">
+                    <article class="product-card" data-product-id="1">
+                        <div class="product-image" role="img" aria-label="Minimalist Coffee Maker product image">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name product-title">Minimalist Coffee Maker</h3>
+                            <p class="product-price">$45.99</p>
+                            <div class="product-rating" aria-label="Rating: 4.5 out of 5 stars, 120 reviews">
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24"><defs><linearGradient id="half-star"><stop offset="50%" stop-color="#f5a94b"/><stop offset="50%" stop-color="#e8e8ea"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star half" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="review-count">(120)</span>
+                            </div>
+                            <a href="https://amazon.com" class="product-source" target="_blank" rel="noopener noreferrer">
+                                Amazon
+                                <svg viewBox="0 0 24 24"><path d="M14.723 12.724c-.734-.73-1.533-.908-2.402-.908-1.092 0-1.821.454-2.324 1.274-.548.893-.614 2.022-.614 3.196 0 1.073.066 2.312.614 3.205.503.82 1.232 1.273 2.324 1.273.869 0 1.668-.178 2.402-.909.824-.82 1.093-1.965 1.093-3.569 0-1.603-.269-2.748-1.093-3.562zm7.188 8.755c-.12.107-.295.115-.432.042-1.213-1.008-1.43-1.477-2.095-2.44-2.001 2.047-3.423 2.662-6.021 2.662-3.074 0-5.467-1.896-5.467-5.694 0-2.966 1.608-4.988 3.898-5.977 1.985-.877 4.755-1.033 6.873-1.274v-.475c0-.875.067-1.91-.446-2.686-.446-.699-1.296-0.99-2.053-.99-1.394 0-2.634.714-2.937 2.194-.063.33-.308.657-.64.673l-3.583-.387c-.302-.066-.637-.307-.55-.766.819-4.317 4.719-5.619 8.214-5.619 1.787 0 4.122.475 5.532 1.829 1.787 1.67 1.617 3.897 1.617 6.318v5.727c0 1.721.714 2.476 1.383 3.406.119.165.146.363-.008.487-.388.323-1.077.925-1.458 1.262l-.004-.003z"/></svg>
+                            </a>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" aria-label="Decrease quantity" data-action="decrease">?</button>
+                                <input type="number" class="quantity-input qty-input" value="1" min="1" aria-label="Quantity">
+                                <button class="quantity-btn" aria-label="Increase quantity" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-product-id="2">
+                        <div class="product-image" role="img" aria-label="Desk Organizer Set product image">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name product-title">Desk Organizer Set</h3>
+                            <p class="product-price">$45.99</p>
+                            <div class="product-rating" aria-label="Rating: 4.5 out of 5 stars, 120 reviews">
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star half" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="review-count">(120)</span>
+                            </div>
+                            <a href="https://etsy.com" class="product-source" target="_blank" rel="noopener noreferrer" style="background-color: #F16521;">
+                                Etsy
+                                <svg viewBox="0 0 24 24"><path d="M9.16033,4.038c0-.27174.02717-.43478.48913-.43478h6.22283c1.087,0,1.68478.92391,2.11957,2.663l.35326,1.38587h1.05978C19.59511,3.712,19.75815,2,19.75815,2s-2.663.29891-4.23913.29891h-7.962L3.29076,2.163v1.1413L4.731,3.57609c1.00543.19022,1.25.40761,1.33152,1.33152,0,0,.08152,2.71739.08152,7.20109s-.08152,7.17391-.08152,7.17391c-.08152.81522-.32609,1.11413-1.33152,1.30435l-1.44022.27174V22l4.2663-.13587h7.11957c1.60326,0,5.32609.13587,5.32609.13587.08152-.97826.625-5.40761.70652-5.89674H19.32609L18.47283,18.022c-.67935,1.60326-1.22283,2.33695-2.98913,2.33695h-2.58152c-1.87,0-2.0163-.54348-2.0163-1.33152,0,0-.08152-3.55435-.08152-7.22283h1.79891c1.87,0,2.17391.51630,2.58152,1.95652l.35326,1.1413h1.03261s-.08152-2.71739-.08152-5.32609c0-2.55435.08152-5.32609.08152-5.32609h-1.03261l-.35326,1.1413c-.40761,1.44022-.71087,1.95652-2.58152,1.95652h-1.79891V4.038z"/></svg>
+                            </a>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" aria-label="Decrease quantity" data-action="decrease">?</button>
+                                <input type="number" class="quantity-input qty-input" value="1" min="1" aria-label="Quantity">
+                                <button class="quantity-btn" aria-label="Increase quantity" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-product-id="3">
+                        <div class="product-image" role="img" aria-label="Minimalist Caworiee Maker product image">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name product-title">Minimalist Caworiee Maker</h3>
+                            <p class="product-price">$15.99</p>
+                            <div class="product-rating" aria-label="Rating: 4.5 out of 5 stars, 93 reviews">
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star half" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="review-count">(93)</span>
+                            </div>
+                            <a href="https://walmart.com" class="product-source" target="_blank" rel="noopener noreferrer" style="background-color: #0071CE;">
+                                Walmart
+                                <svg viewBox="0 0 24 24"><path d="M11.964 0c-.2.03-.22.04-.23.29-.03 1.395-.073 2.79-.093 4.184 0 .058.023.14-.023.2-.022.022-.093.022-.14.024-1.044-.023-2.066.07-3.087.278-3.528.718-6.17 3.33-7.096 6.79-.742 2.766-.3 5.76 1.162 8.225 1.533 2.603 4.16 4.437 7.12 5.016 2.997.58 6.156-.07 8.712-1.765 2.626-1.742 4.415-4.484 4.925-7.52.673-4.045-.836-8.344-3.854-11.03C16.96 2.484 14.463 1.187 11.8.718c-.22-.046-.417-.07-.637-.116.022-.324-.046-.626.022-.927H11.057c.116.37.022.742.046 1.116-.14 0-.302-.022-.44.022v.185zM6.48 6.32c1.185-.65 2.532-1.02 3.88-1.067.138-.046.3-.023.46-.046 0-.302-.023-.626-.046-.95 0-.046.023-.092.07-.138h.185c.117.395.046.812.07 1.208 1.44.14 2.835.533 4.066 1.23.023-.023.046-.023.07-.023.185-.324.416-.626.603-.974.138-.278.254-.58.37-.882l.278.21c-.487.927-.997 1.858-1.508 2.788 1.092.766 2.022 1.765 2.742 2.905.325.533.604 1.09.836 1.672-.092.046-.093.023-.116-.046-.65-1.487-1.625-2.835-2.835-3.878-.743-.65-1.555-1.208-2.44-1.628-.046.394-.046.812-.092 1.207 0 .116-.117.185-.186.23-1.185.628-2.184 1.533-2.927 2.602-.743 1.043-1.255 2.252-1.487 3.506-.23 1.254-.16 2.556.186 3.787.347 1.208.952 2.345 1.787 3.298.023.022.093.068.116.022.58-1.276 1.162-2.576 1.742-3.853l.278.186c-.187.417-.395.835-.604 1.254-.395.835-.766 1.695-1.162 2.532 1.093.695 2.346 1.114 3.646 1.23 1.672.16 3.413-.207 4.832-1.068.254-.138.485-.3.72-.463-.117-.232-.208-.486-.324-.718-.325-.672-.65-1.323-.973-1.998-.07-.162-.162-.324-.21-.51.117-.023.163.07.186.14.487 1.185 1.02 2.393 1.485 3.6.046.116.14.208.116.347-1.115.997-2.486 1.695-3.948 1.95-1.648.3-3.39.185-4.97-.418-1.58-.604-2.95-1.673-3.97-3-1.023-1.324-1.672-2.927-1.905-4.6-.116-.742-.093-1.51-.047-2.275.21-2.23 1.162-4.367 2.65-5.992.256-.278.533-.533.812-.79-.023-.253-.046-.53-.046-.787 0-.115.07-.208.162-.23zm4.948.602c.07-.046.185.022.208.092v.116c-.023 1.743-.023 3.46-.023 5.202 0 1.742.023 3.46.046 5.202 0 .116-.047.255-.186.255-1.393.07-2.787.046-4.18.046h-.186c-.022-.07.047-.115.094-.138.604-.303 1.23-.603 1.833-.905-.022-.952-.022-1.905-.022-2.88 0-.952 0-1.905.022-2.858-.65-.347-1.347-.672-2.022-1.02-.022-.022-.022-.068 0-.092.115-.07.23-.092.37-.092h4.065c-.023-.3.022-.602-.023-.905zm.023 1.695H8.177c.022.092.022.186.022.278l.023 5.48c0 .092.023.185-.023.278h3.275c-.07-.07-.047-.185-.047-.278.024-1.903.024-3.808.024-5.735V8.617zm1.068-.672c0 .022-.023.068-.046.092-.603.3-1.23.627-1.834.928.024.904.024 1.81.024 2.74 0 .928 0 1.857-.023 2.786.626.324 1.23.65 1.856.974.046.024.092.024.092-.046-.046-2.485-.046-4.97-.046-7.452l-.023-.022zm1.857-.325c-.278.022-.533.092-.812.138-.044.186-.044.394-.044.604-.023 2.44-.023 4.878-.023 7.317 0 .21 0 .417.023.604.278.046.58.116.858.138.07-.07.047-.162.047-.254-.023-2.834-.023-5.642 0-8.476-.023-.07-.023-.115-.07-.093zm.742-.07c.046-.092.184-.068.254-.068.348.022.65.137.95.3-.186 2.927-.186 5.877 0 8.804-.3.162-.603.278-.95.3-.07 0-.186.023-.255-.07-.07-.186-.046-.394-.046-.604 0-2.81-.023-5.596 0-8.407 0-.093-.022-.186.046-.254z"/></svg>
+                            </a>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" aria-label="Decrease quantity" data-action="decrease">?</button>
+                                <input type="number" class="quantity-input qty-input" value="1" min="1" aria-label="Quantity">
+                                <button class="quantity-btn" aria-label="Increase quantity" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-product-id="4">
+                        <div class="product-image" role="img" aria-label="Minimalist Door Weaker product image">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name product-title">Minimalist Door Weaker</h3>
+                            <p class="product-price">$45.99</p>
+                            <div class="product-rating" aria-label="Rating: 4 out of 5 stars, 39 reviews">
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="review-count">(39)</span>
+                            </div>
+                            <a href="https://walmart.com" class="product-source" target="_blank" rel="noopener noreferrer" style="background-color: #0071CE;">
+                                Walmart
+                                <svg viewBox="0 0 24 24"><path d="M11.964 0c-.2.03-.22.04-.23.29-.03 1.395-.073 2.79-.093 4.184 0 .058.023.14-.023.2-.022.022-.093.022-.14.024-1.044-.023-2.066.07-3.087.278-3.528.718-6.17 3.33-7.096 6.79-.742 2.766-.3 5.76 1.162 8.225 1.533 2.603 4.16 4.437 7.12 5.016 2.997.58 6.156-.07 8.712-1.765 2.626-1.742 4.415-4.484 4.925-7.52.673-4.045-.836-8.344-3.854-11.03C16.96 2.484 14.463 1.187 11.8.718c-.22-.046-.417-.07-.637-.116.022-.324-.046-.626.022-.927H11.057c.116.37.022.742.046 1.116-.14 0-.302-.022-.44.022v.185zM6.48 6.32c1.185-.65 2.532-1.02 3.88-1.067.138-.046.3-.023.46-.046 0-.302-.023-.626-.046-.95 0-.046.023-.092.07-.138h.185c.117.395.046.812.07 1.208 1.44.14 2.835.533 4.066 1.23.023-.023.046-.023.07-.023.185-.324.416-.626.603-.974.138-.278.254-.58.37-.882l.278.21c-.487.927-.997 1.858-1.508 2.788 1.092.766 2.022 1.765 2.742 2.905.325.533.604 1.09.836 1.672-.092.046-.093.023-.116-.046-.65-1.487-1.625-2.835-2.835-3.878-.743-.65-1.555-1.208-2.44-1.628-.046.394-.046.812-.092 1.207 0 .116-.117.185-.186.23-1.185.628-2.184 1.533-2.927 2.602-.743 1.043-1.255 2.252-1.487 3.506-.23 1.254-.16 2.556.186 3.787.347 1.208.952 2.345 1.787 3.298.023.022.093.068.116.022.58-1.276 1.162-2.576 1.742-3.853l.278.186c-.187.417-.395.835-.604 1.254-.395.835-.766 1.695-1.162 2.532 1.093.695 2.346 1.114 3.646 1.23 1.672.16 3.413-.207 4.832-1.068.254-.138.485-.3.72-.463-.117-.232-.208-.486-.324-.718-.325-.672-.65-1.323-.973-1.998-.07-.162-.162-.324-.21-.51.117-.023.163.07.186.14.487 1.185 1.02 2.393 1.485 3.6.046.116.14.208.116.347-1.115.997-2.486 1.695-3.948 1.95-1.648.3-3.39.185-4.97-.418-1.58-.604-2.95-1.673-3.97-3-1.023-1.324-1.672-2.927-1.905-4.6-.116-.742-.093-1.51-.047-2.275.21-2.23 1.162-4.367 2.65-5.992.256-.278.533-.533.812-.79-.023-.253-.046-.53-.046-.787 0-.115.07-.208.162-.23zm4.948.602c.07-.046.185.022.208.092v.116c-.023 1.743-.023 3.46-.023 5.202 0 1.742.023 3.46.046 5.202 0 .116-.047.255-.186.255-1.393.07-2.787.046-4.18.046h-.186c-.022-.07.047-.115.094-.138.604-.303 1.23-.603 1.833-.905-.022-.952-.022-1.905-.022-2.88 0-.952 0-1.905.022-2.858-.65-.347-1.347-.672-2.022-1.02-.022-.022-.022-.068 0-.092.115-.07.23-.092.37-.092h4.065c-.023-.3.022-.602-.023-.905zm.023 1.695H8.177c.022.092.022.186.022.278l.023 5.48c0 .092.023.185-.023.278h3.275c-.07-.07-.047-.185-.047-.278.024-1.903.024-3.808.024-5.735V8.617zm1.068-.672c0 .022-.023.068-.046.092-.603.3-1.23.627-1.834.928.024.904.024 1.81.024 2.74 0 .928 0 1.857-.023 2.786.626.324 1.23.65 1.856.974.046.024.092.024.092-.046-.046-2.485-.046-4.97-.046-7.452l-.023-.022zm1.857-.325c-.278.022-.533.092-.812.138-.044.186-.044.394-.044.604-.023 2.44-.023 4.878-.023 7.317 0 .21 0 .417.023.604.278.046.58.116.858.138.07-.07.047-.162.047-.254-.023-2.834-.023-5.642 0-8.476-.023-.07-.023-.115-.07-.093zm.742-.07c.046-.092.184-.068.254-.068.348.022.65.137.95.3-.186 2.927-.186 5.877 0 8.804-.3.162-.603.278-.95.3-.07 0-.186.023-.255-.07-.07-.186-.046-.394-.046-.604 0-2.81-.023-5.596 0-8.407 0-.093-.022-.186.046-.254z"/></svg>
+                            </a>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" aria-label="Decrease quantity" data-action="decrease">?</button>
+                                <input type="number" class="quantity-input qty-input" value="1" min="1" aria-label="Quantity">
+                                <button class="quantity-btn" aria-label="Increase quantity" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-product-id="5">
+                        <div class="product-image" role="img" aria-label="Minimalist Foucher product image">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name product-title">Minimalist Foucher</h3>
+                            <p class="product-price">$42.99</p>
+                            <div class="product-rating" aria-label="Rating: 4 out of 5 stars, 32 reviews">
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star empty" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="review-count">(32)</span>
+                            </div>
+                            <a href="https://amazon.com" class="product-source" target="_blank" rel="noopener noreferrer">
+                                Amazon
+                                <svg viewBox="0 0 24 24"><path d="M14.723 12.724c-.734-.73-1.533-.908-2.402-.908-1.092 0-1.821.454-2.324 1.274-.548.893-.614 2.022-.614 3.196 0 1.073.066 2.312.614 3.205.503.82 1.232 1.273 2.324 1.273.869 0 1.668-.178 2.402-.909.824-.82 1.093-1.965 1.093-3.569 0-1.603-.269-2.748-1.093-3.562zm7.188 8.755c-.12.107-.295.115-.432.042-1.213-1.008-1.43-1.477-2.095-2.44-2.001 2.047-3.423 2.662-6.021 2.662-3.074 0-5.467-1.896-5.467-5.694 0-2.966 1.608-4.988 3.898-5.977 1.985-.877 4.755-1.033 6.873-1.274v-.475c0-.875.067-1.91-.446-2.686-.446-.699-1.296-0.99-2.053-.99-1.394 0-2.634.714-2.937 2.194-.063.33-.308.657-.64.673l-3.583-.387c-.302-.066-.637-.307-.55-.766.819-4.317 4.719-5.619 8.214-5.619 1.787 0 4.122.475 5.532 1.829 1.787 1.67 1.617 3.897 1.617 6.318v5.727c0 1.721.714 2.476 1.383 3.406.119.165.146.363-.008.487-.388.323-1.077.925-1.458 1.262l-.004-.003z"/></svg>
+                            </a>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" aria-label="Decrease quantity" data-action="decrease">?</button>
+                                <input type="number" class="quantity-input qty-input" value="1" min="1" aria-label="Quantity">
+                                <button class="quantity-btn" aria-label="Increase quantity" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-product-id="6">
+                        <div class="product-image" role="img" aria-label="Minimalist Beelling product image">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name product-title">Minimalist Beelling</h3>
+                            <p class="product-price">$45.99</p>
+                            <div class="product-rating" aria-label="Rating: 4.5 out of 5 stars, 120 reviews">
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star half" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="review-count">(120)</span>
+                            </div>
+                            <a href="https://amazon.com" class="product-source" target="_blank" rel="noopener noreferrer">
+                                Amazon
+                                <svg viewBox="0 0 24 24"><path d="M14.723 12.724c-.734-.73-1.533-.908-2.402-.908-1.092 0-1.821.454-2.324 1.274-.548.893-.614 2.022-.614 3.196 0 1.073.066 2.312.614 3.205.503.82 1.232 1.273 2.324 1.273.869 0 1.668-.178 2.402-.909.824-.82 1.093-1.965 1.093-3.569 0-1.603-.269-2.748-1.093-3.562zm7.188 8.755c-.12.107-.295.115-.432.042-1.213-1.008-1.43-1.477-2.095-2.44-2.001 2.047-3.423 2.662-6.021 2.662-3.074 0-5.467-1.896-5.467-5.694 0-2.966 1.608-4.988 3.898-5.977 1.985-.877 4.755-1.033 6.873-1.274v-.475c0-.875.067-1.91-.446-2.686-.446-.699-1.296-0.99-2.053-.99-1.394 0-2.634.714-2.937 2.194-.063.33-.308.657-.64.673l-3.583-.387c-.302-.066-.637-.307-.55-.766.819-4.317 4.719-5.619 8.214-5.619 1.787 0 4.122.475 5.532 1.829 1.787 1.67 1.617 3.897 1.617 6.318v5.727c0 1.721.714 2.476 1.383 3.406.119.165.146.363-.008.487-.388.323-1.077.925-1.458 1.262l-.004-.003z"/></svg>
+                            </a>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" aria-label="Decrease quantity" data-action="decrease">?</button>
+                                <input type="number" class="quantity-input qty-input" value="1" min="1" aria-label="Quantity">
+                                <button class="quantity-btn" aria-label="Increase quantity" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-product-id="7">
+                        <div class="product-image" role="img" aria-label="Minimalist Panner product image">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                            </svg>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-name product-title">Minimalist Panner</h3>
+                            <p class="product-price">$45.99</p>
+                            <div class="product-rating" aria-label="Rating: 4.5 out of 5 stars, 99 reviews">
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star filled" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg class="star half" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <span class="review-count">(99)</span>
+                            </div>
+                            <a href="https://walmart.com" class="product-source" target="_blank" rel="noopener noreferrer" style="background-color: #0071CE;">
+                                Walmart
+                                <svg viewBox="0 0 24 24"><path d="M11.964 0c-.2.03-.22.04-.23.29-.03 1.395-.073 2.79-.093 4.184 0 .058.023.14-.023.2-.022.022-.093.022-.14.024-1.044-.023-2.066.07-3.087.278-3.528.718-6.17 3.33-7.096 6.79-.742 2.766-.3 5.76 1.162 8.225 1.533 2.603 4.16 4.437 7.12 5.016 2.997.58 6.156-.07 8.712-1.765 2.626-1.742 4.415-4.484 4.925-7.52.673-4.045-.836-8.344-3.854-11.03C16.96 2.484 14.463 1.187 11.8.718c-.22-.046-.417-.07-.637-.116.022-.324-.046-.626.022-.927H11.057c.116.37.022.742.046 1.116-.14 0-.302-.022-.44.022v.185zM6.48 6.32c1.185-.65 2.532-1.02 3.88-1.067.138-.046.3-.023.46-.046 0-.302-.023-.626-.046-.95 0-.046.023-.092.07-.138h.185c.117.395.046.812.07 1.208 1.44.14 2.835.533 4.066 1.23.023-.023.046-.023.07-.023.185-.324.416-.626.603-.974.138-.278.254-.58.37-.882l.278.21c-.487.927-.997 1.858-1.508 2.788 1.092.766 2.022 1.765 2.742 2.905.325.533.604 1.09.836 1.672-.092.046-.093.023-.116-.046-.65-1.487-1.625-2.835-2.835-3.878-.743-.65-1.555-1.208-2.44-1.628-.046.394-.046.812-.092 1.207 0 .116-.117.185-.186.23-1.185.628-2.184 1.533-2.927 2.602-.743 1.043-1.255 2.252-1.487 3.506-.23 1.254-.16 2.556.186 3.787.347 1.208.952 2.345 1.787 3.298.023.022.093.068.116.022.58-1.276 1.162-2.576 1.742-3.853l.278.186c-.187.417-.395.835-.604 1.254-.395.835-.766 1.695-1.162 2.532 1.093.695 2.346 1.114 3.646 1.23 1.672.16 3.413-.207 4.832-1.068.254-.138.485-.3.72-.463-.117-.232-.208-.486-.324-.718-.325-.672-.65-1.323-.973-1.998-.07-.162-.162-.324-.21-.51.117-.023.163.07.186.14.487 1.185 1.02 2.393 1.485 3.6.046.116.14.208.116.347-1.115.997-2.486 1.695-3.948 1.95-1.648.3-3.39.185-4.97-.418-1.58-.604-2.95-1.673-3.97-3-1.023-1.324-1.672-2.927-1.905-4.6-.116-.742-.093-1.51-.047-2.275.21-2.23 1.162-4.367 2.65-5.992.256-.278.533-.533.812-.79-.023-.253-.046-.53-.046-.787 0-.115.07-.208.162-.23zm4.948.602c.07-.046.185.022.208.092v.116c-.023 1.743-.023 3.46-.023 5.202 0 1.742.023 3.46.046 5.202 0 .116-.047.255-.186.255-1.393.07-2.787.046-4.18.046h-.186c-.022-.07.047-.115.094-.138.604-.303 1.23-.603 1.833-.905-.022-.952-.022-1.905-.022-2.88 0-.952 0-1.905.022-2.858-.65-.347-1.347-.672-2.022-1.02-.022-.022-.022-.068 0-.092.115-.07.23-.092.37-.092h4.065c-.023-.3.022-.602-.023-.905zm.023 1.695H8.177c.022.092.022.186.022.278l.023 5.48c0 .092.023.185-.023.278h3.275c-.07-.07-.047-.185-.047-.278.024-1.903.024-3.808.024-5.735V8.617zm1.068-.672c0 .022-.023.068-.046.092-.603.3-1.23.627-1.834.928.024.904.024 1.81.024 2.74 0 .928 0 1.857-.023 2.786.626.324 1.23.65 1.856.974.046.024.092.024.092-.046-.046-2.485-.046-4.97-.046-7.452l-.023-.022zm1.857-.325c-.278.022-.533.092-.812.138-.044.186-.044.394-.044.604-.023 2.44-.023 4.878-.023 7.317 0 .21 0 .417.023.604.278.046.58.116.858.138.07-.07.047-.162.047-.254-.023-2.834-.023-5.642 0-8.476-.023-.07-.023-.115-.07-.093zm.742-.07c.046-.092.184-.068.254-.068.348.022.65.137.95.3-.186 2.927-.186 5.877 0 8.804-.3.162-.603.278-.95.3-.07 0-.186.023-.255-.07-.07-.186-.046-.394-.046-.604 0-2.81-.023-5.596 0-8.407 0-.093-.022-.186.046-.254z"/></svg>
+                            </a>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" aria-label="Decrease quantity" data-action="decrease">?</button>
+                                <input type="number" class="quantity-input qty-input" value="1" min="1" aria-label="Quantity">
+                                <button class="quantity-btn" aria-label="Increase quantity" data-action="increase">+</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="summary-sidebar" aria-labelledby="summary-heading">
+                <div class="summary-card">
+                    <h2 id="summary-heading" class="visually-hidden">Wishlist Summary</h2>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal:</span>
+                        <span class="summary-value subtotal" id="subtotal">$245.95</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span class="budget-label">Budget Remaining:</span>
+                        <span class="budget-value" id="budget-remaining">$54.05</span>
+                    </div>
+
+                    <div class="budget-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Budget used: 82%">
+                        <div class="budget-fill" style="width: 82%"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn btn-primary" id="share-link-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                            Share link
+                        </button>
+
+                        <button class="action-btn btn-secondary" id="export-csv-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Export CSV
+                        </button>
+
+                        <button class="action-btn btn-secondary" id="copy-list-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            Copy list
+                        </button>
+
+                        <button class="action-btn btn-secondary" id="email-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Send to email
+                        </button>
+                    </div>
+
+                    <div class="info-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <p><strong>Affiliates earn more with bulk gift lists.</strong> Share curated lists and track purchases easily.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
