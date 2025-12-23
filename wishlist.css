@@ -55,6 +55,26 @@
             white-space: nowrap;
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1a1f36;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link[aria-current="page"] {
+            color: #f5a94b;
+        }
+
         .search-container {
             flex: 1;
             max-width: 400px;
