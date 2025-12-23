@@ -61,13 +61,20 @@
             gap: 24px;
         }
 
+        #nav-main {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
         .nav-menu {
             display: none;
             list-style: none;
             gap: 24px;
         }
 
-        .nav-menu a {
+        .nav-menu a,
+        .nav-link {
             text-decoration: none;
             color: #1a1f36;
             font-size: 14px;
@@ -76,11 +83,14 @@
         }
 
         .nav-menu a:hover,
-        .nav-menu a:focus {
+        .nav-menu a:focus,
+        .nav-link:hover,
+        .nav-link:focus {
             color: #f5a94b;
         }
 
-        .nav-menu a.active {
+        .nav-menu a.active,
+        .nav-link.active {
             color: #f5a94b;
         }
 
@@ -177,7 +187,8 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .secondary-nav {
+        .secondary-nav,
+        .provider-bar {
             background: #e8e8ea;
             padding: 12px 24px;
             text-align: center;
@@ -185,7 +196,8 @@
             color: #000000;
         }
 
-        .affiliate-notice {
+        .affiliate-notice,
+        .affiliate-note {
             background: #ffffff;
             padding: 8px 24px;
             text-align: right;

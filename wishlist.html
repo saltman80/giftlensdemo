@@ -27,17 +27,17 @@
                 <input type="search" class="search-input" placeholder="Search for gifts..." aria-label="Search for gifts">
             </div>
 
-            <nav class="nav-right" aria-label="Main navigation">
+            <nav id="nav-main" class="nav-right" aria-label="Main navigation">
                 <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <ul class="nav-menu" id="main-menu" role="list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="analysis.html">Analysis</a></li>
-                    <li><a href="results.html">Results</a></li>
-                    <li><a href="wishlist.html" class="active" aria-current="page">Wishlist</a></li>
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="analysis.html">Analysis</a></li>
+                    <li><a class="nav-link" href="results.html">Results</a></li>
+                    <li><a class="nav-link active" href="wishlist.html" aria-current="page">Wishlist</a></li>
                 </ul>
                 <a href="analysis.html" class="login-btn">Login</a>
                 <a href="wishlist.html" class="wishlist-btn" aria-label="View wishlist">
@@ -48,11 +48,11 @@
             </nav>
         </div>
         
-        <div class="secondary-nav">
-            Searching: <strong>Amazon</strong> · <strong>Shop</strong> · <strong>Etsy</strong> · <strong>Walmart</strong> · <strong>More</strong>
+        <div class="secondary-nav provider-bar">
+            Searching: <strong>Amazon</strong> ? <strong>Shop</strong> ? <strong>Etsy</strong> ? <strong>Walmart</strong> ? <strong>More</strong>
         </div>
         
-        <div class="affiliate-notice">
+        <div class="affiliate-notice affiliate-note">
             All purchases may use affiliate links.
         </div>
     </header>
