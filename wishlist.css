@@ -68,7 +68,7 @@
         }
 
         .nav-menu {
-            display: flex;
+            display: none;
             flex-direction: row;
             align-items: center;
             list-style: none;
@@ -532,6 +532,10 @@
 
         /* Responsive */
         @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+            }
+
             .mobile-menu-toggle {
                 display: none;
             }
