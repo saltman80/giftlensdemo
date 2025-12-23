@@ -55,51 +55,21 @@
             white-space: nowrap;
         }
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        #nav-main {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .nav-menu {
-            display: none;
-            flex-direction: row;
-            align-items: center;
-            list-style: none;
-            gap: 24px;
-        }
-
-        .nav-menu a,
-        .nav-link {
-            text-decoration: none;
-            color: #1a1f36;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a:focus,
-        .nav-link:hover,
-        .nav-link:focus {
-            color: #f5a94b;
-        }
-
-        .nav-menu a.active,
-        .nav-link.active {
-            color: #f5a94b;
-        }
-
         .search-container {
             flex: 1;
             max-width: 400px;
             position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: #1a1f36;
+            opacity: 0.5;
         }
 
         .search-input {
@@ -116,15 +86,33 @@
             border-color: #f5a94b;
         }
 
-        .search-icon {
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
             color: #1a1f36;
-            opacity: 0.5;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a:focus {
+            color: #f5a94b;
+        }
+
+        .nav-menu a.active {
+            color: #f5a94b;
         }
 
         .login-btn {
