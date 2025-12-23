@@ -68,7 +68,9 @@
         }
 
         .nav-menu {
-            display: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             list-style: none;
             gap: 24px;
         }
@@ -530,12 +532,6 @@
 
         /* Responsive */
         @media (min-width: 768px) {
-            .nav-menu {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
-
             .mobile-menu-toggle {
                 display: none;
             }
