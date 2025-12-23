@@ -121,17 +121,18 @@
             white-space: nowrap;
         }
 
-        .wishlist-btn {
-            width: 24px;
-            height: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.wishlist-btn {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
 
         .wishlist-icon {
             width: 24px;
