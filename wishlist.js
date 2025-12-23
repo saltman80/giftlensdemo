@@ -3,6 +3,18 @@
 (function() {
     'use strict';
 
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', String(!isExpanded));
+            navMenu.classList.toggle('active');
+        });
+    }
+
     // Session storage key (use sessionStorage per contract)
     const SESSION_KEY = 'giftlens:wishlist:v1';
 

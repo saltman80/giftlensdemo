@@ -18,43 +18,44 @@
     <header role="banner">
         <div class="header-container">
             <a href="index.html" class="logo" aria-label="GiftLens AI Home">GiftLens AI</a>
-
-            <nav id="nav-main" class="nav-links" aria-label="Main navigation">
-                <a class="nav-link" href="index.html">Home</a>
-                <a class="nav-link" href="analysis.html">Analysis</a>
-                <a class="nav-link" href="results.html">Results</a>
-                <a class="nav-link" href="wishlist.html" aria-current="page">Wishlist</a>
-            </nav>
             
             <div class="search-container">
-                <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
+                <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="2"/>
+                    <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
-                <input 
-                    type="search" 
-                    class="search-input" 
-                    placeholder="Search for gifts..."
-                    aria-label="Search for gifts"
-                >
+                <input type="search" class="search-input" placeholder="Search for gifts..." aria-label="Search for gifts">
             </div>
 
-            <div class="header-actions">
-                <a href="analysis.html" class="login-link">Login</a>
-                <svg class="wishlist-icon" aria-label="View wishlist" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-            </div>
+            <nav class="nav-right" aria-label="Main navigation">
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="main-menu" role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="analysis.html">Analysis</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="wishlist.html" class="active" aria-current="page">Wishlist</a></li>
+                </ul>
+                <a href="analysis.html" class="login-btn">Login</a>
+                <a href="wishlist.html" class="wishlist-btn" aria-label="View wishlist">
+                    <svg class="wishlist-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+        
+        <div class="secondary-nav">
+            Searching: <strong>Amazon</strong> · <strong>Shop</strong> · <strong>Etsy</strong> · <strong>Walmart</strong> · <strong>More</strong>
+        </div>
+        
+        <div class="affiliate-notice">
+            All purchases may use affiliate links.
         </div>
     </header>
-
-    <div class="source-bar provider-bar" role="complementary" aria-label="Shopping sources">
-        Searching: Amazon ? Shop ? Etsy ? Walmart ? More
-    </div>
-
-    <div class="affiliate-notice affiliate-note">
-        All purchases may use affiliate links.
-    </div>
 
     <main id="main-content" role="main">
         <div class="content-grid">
