@@ -470,23 +470,23 @@
     function initIntegrityChecks() {
         let ok = true;
 
-        const navMain = document.getElementById('nav-main');
+        const navMain = document.querySelector('header nav.nav-right');
         if (!navMain) {
-            console.error('#nav-main missing');
+            console.error('header nav missing');
             ok = false;
         }
 
-        const providerBar = document.querySelector('.provider-bar');
+        const providerBar = document.querySelector('.secondary-nav');
         const expectedProviderText = 'Searching: Amazon ? Shop ? Etsy ? Walmart ? More';
         if (!providerBar || providerBar.textContent.trim() !== expectedProviderText) {
-            console.error('.provider-bar missing or text mismatch');
+            console.error('.secondary-nav missing or text mismatch');
             ok = false;
         }
 
-        const affiliateNote = document.querySelector('.affiliate-note');
+        const affiliateNote = document.querySelector('.affiliate-notice');
         const expectedAffiliateText = 'All purchases may use affiliate links.';
         if (!affiliateNote || affiliateNote.textContent.trim() !== expectedAffiliateText) {
-            console.error('.affiliate-note missing or text mismatch');
+            console.error('.affiliate-notice missing or text mismatch');
             ok = false;
         }
 
