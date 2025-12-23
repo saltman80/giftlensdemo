@@ -180,16 +180,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Attach public API
     window.giftLens.init = window.giftLens.init || function init() {
         // Integrity and content checks (I2)
-        const navMain = document.querySelector('#nav-main');
-        const providerBar = document.querySelector('.provider-bar');
-        const affiliateNote = document.querySelector('.affiliate-note');
+        const navMain = document.querySelector('header nav.nav-right');
+        const providerBar = document.querySelector('.secondary-nav');
+        const affiliateNote = document.querySelector('.affiliate-notice');
 
         let integrityOk = true;
         const expectedProvider = 'Searching: Amazon ? Shop ? Etsy ? Walmart ? More';
         const expectedAffiliate = 'All purchases may use affiliate links.';
 
         if (!navMain || !providerBar || !affiliateNote) {
-            console.error('giftLens: missing required DOM elements (#nav-main, .provider-bar, .affiliate-note)');
+            console.error('giftLens: missing required DOM elements (header nav, .secondary-nav, .affiliate-notice)');
             showToast('Feature unavailable: required UI elements missing');
             integrityOk = false;
         } else {
@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Nav links canonical handling and aria-current (I5)
-        const navLinks = document.querySelectorAll('#nav-main .nav-link');
+        const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navLinks.forEach(l => l.removeAttribute('aria-current'));
