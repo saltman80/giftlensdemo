@@ -15,6 +15,18 @@
         });
     }
 
+    // Match nav link behavior to other pages
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(l => l.removeAttribute('aria-current'));
+            this.setAttribute('aria-current', 'page');
+        });
+        if (link.classList.contains('active')) {
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+
     // Session storage key (use sessionStorage per contract)
     const SESSION_KEY = 'giftlens:wishlist:v1';
 
